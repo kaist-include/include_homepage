@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo_simple.png';
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import About from './components/pages/About';
+import Home from './components/pages/Home';
 import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <h1>INCLUDE KAIST</h1>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          About
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/about" component={About}/>
+          <Redirect path="*" to="/" />
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
