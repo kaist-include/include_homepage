@@ -1,0 +1,11 @@
+import React from 'react';
+
+
+export default function SignUp() {
+    return (
+        <div>
+            <h1>SignUp</h1>
+            <p>This is SignUp page!</p>
+        </div>   
+    )
+}
